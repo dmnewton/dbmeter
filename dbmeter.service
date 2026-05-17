@@ -5,9 +5,9 @@ Wants=network.target
 
 [Service]
 Type=simple
-User=dnewton
-WorkingDirectory=/home/dnewton/dbmeter
-ExecStart=/usr/bin/python3 /home/dnewton/dbmeter/dbmeter_mqtt.py
+User=i2ssound2
+WorkingDirectory=/home/i2ssound2/dbmeter
+ExecStart=/usr/bin/python3 /home/i2ssound2/dbmeter/dbmeter_mqtt.py
 Restart=always
 RestartSec=30
 
