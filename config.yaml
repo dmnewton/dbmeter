@@ -1,0 +1,24 @@
+# MQTT parameters
+mqtt:
+  enabled: true
+  host: "homeassistant"
+  username: "addons"
+  # password is loaded from .env (MQTT_PASSWORD)
+  # measurement_interval overrides the default 20s interval when MQTT is disabled.
+  # When MQTT is enabled this is controlled dynamically via Home Assistant.
+  measurement_interval: 20
+
+# Home Assistant auto discovery parameters
+homeassistant:
+  device_id: "soundmeter2"
+  device_name: "Sound Meter"
+  offset: 118  # ICS-43434: datasheet sensitivity -26 dBFS at 94 dB SPL → 94+26=120, empirically -2 dB
+
+# Audio configuration
+audio:
+  format: "paInt32"  # Options: paInt16, paInt32, paFloat32
+  channels: 2
+  level: 2147483648  # Full-scale for 24-bit left-justified in 32-bit word (2^31)
+  sample_rate: 48000  # Sample rate in Hz
+  chunk_size: 12000  # Number of frames per buffer (1/4 of the sample rate)
+  record_seconds: 2  # Recording duration for each measurement

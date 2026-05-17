@@ -1,0 +1,15 @@
+[Unit]
+Description=Heat Pump Sound Level Meter Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=dnewton
+WorkingDirectory=/home/dnewton/dbmeter
+ExecStart=/usr/bin/python3 /home/dnewton/dbmeter/dbmeter_mqtt.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
