@@ -56,7 +56,21 @@ sudo systemctl stop dbmeter.service
 
 # Disable autostart
 sudo systemctl disable dbmeter.service
+
 ```
+
+### Hardware Connections (Wiring)
+
+| Microphone Pin | Pin Function | Raspberry Pi Zero Pin | GPIO/BCM Number |
+| :--- | :--- | :--- | :--- |
+| **VCC / 3V** | 3.3V Power | Pin 1 or Pin 17 | — |
+| **GND** | Ground | Pin 6 (or any GND pin) | — |
+| **BCLK** | Bit Clock | Pin 12 | GPIO 18 |
+| **DOUT / SD** | Data Out / Serial Data | Pin 38 | GPIO 20 |
+| **LRCL / WS** | Left/Right Clock / Word Select | Pin 35 | GPIO 19 |
+| **SEL / L/R** | Channel Select | Connect to **GND** (for Left) or **3.3V** (for Right) | — |
+
+
 
 ### Notes
 
